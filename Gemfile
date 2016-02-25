@@ -50,6 +50,7 @@ gem 'simple_form'
 gem 'coffee-script-source', '1.8.0'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'carrierwave', '~> 0.9'
 group :development, :test do
   gem 'rspec', '~> 2.14.1'
