@@ -11,13 +11,23 @@ class UsersController < ApplicationController
 		end
 
 		begin
-			if @user.end_date < Time.new
+			if @user.end_date > Time.new
 				@on_diet = true
 			else
 				@on_diet = false
 			end
 		rescue
 			@on_diet = false
+		end
+
+		if @on_diet
+			updates = Update.where(user: @user)
+			@progress_chart_data = {}
+			@goal_weight_data = {@user.end_date => @user.goal_weight}
+			updates.each do |update|
+				@progress_chart_data[update.created_at] = update.current_weight
+				@goal_weight_data[update.created_at] = @user.goal_weight
+			end
 		end
 
 		render "show"
@@ -72,6 +82,7 @@ class UsersController < ApplicationController
 			user.goal_weight = goal_weight
 			user.end_date = params[:end_date]
 			user.save
+			Update.create(user: user, current_weight: start_weight)
 		end
 		redirect_to "/users/#{user.id}"
 	end

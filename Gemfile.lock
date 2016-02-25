@@ -55,6 +55,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    chartkick (1.4.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -216,6 +217,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave (~> 0.9)
+  chartkick
   coffee-rails (~> 4.1.0)
   coffee-script-source (= 1.8.0)
   hirb

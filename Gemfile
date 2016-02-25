@@ -52,6 +52,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'carrierwave', '~> 0.9'
+gem 'chartkick'
 group :development, :test do
   gem 'rspec', '~> 2.14.1'
   gem 'rspec-rails', '~> 2.14.1'

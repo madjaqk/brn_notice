@@ -25,7 +25,16 @@
 			<%= f.button :submit %>
 		<% end %>
 	</div>
-	<% if !@on_diet %>
+	<% if @on_diet %>
+		<div class="form">
+			<h3>Update:</h3>
+			<form action="/update" method="post">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+				<p>Current weight: <input type="number" name="current_weight"></p>
+				<input type="submit" value="update">
+			</form>
+		</div>
+	<% else %>
 		<div class="form">
 			<h3>Start your diet!</h3>
 			<form action="/start_diet/" method="post">
@@ -37,4 +46,20 @@
 			</form>
 		</div>
 	<% end %>
+<% else %>
+	<% if @user.about %><b>About me</b>: <%= @user.about %><% end %>
+<% end %>
+
+<% if @progress_chart_data.length > 0 %>
+	<%= area_chart [{name: "", data: @progress_chart_data}, {name: "Goal weight", data: @goal_weight_data}], min: @user.goal_weight - 10, stacked: false, library: {legend: 'none'} %>
+	<table>
+		<tr><th>Date</th>
+			<th>Weight</th>
+		</tr>
+		<% @progress_chart_data.each do |created_at, current_weight| %>
+			<tr><td><%= created_at.strftime("%Y-%m-%d") %></td>
+				<td><%= current_weight %></td>
+			</tr>
+		<% end %>
+	</table>
 <% end %>
