@@ -24,9 +24,6 @@ class User < ActiveRecord::Base
   	else
   		user.email = "#{user.first_name}#{Time.new.to_i}@fakefakefake.fake"
   	end
-  	puts "**********"
-  	puts user.inspect
-  	puts "**********"
   	user.save!
   	user
   end
