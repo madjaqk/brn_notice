@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<% if current_user %>
+		<p>Hello, <%= current_user.first_name %>!</p>
+		<p><img src="<%= current_user.profile_picture %>"></p>
+		<p><%= link_to "Log out", logout_path, method: :delete %></p>
+	<% end %>
 
-<%= yield %>
+	<% flash.each do |key, value| %>
+		<%= value %>
+	<% end %>
+
+
+	<%= yield %>
 
 </body>
 </html>

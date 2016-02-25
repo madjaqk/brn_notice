@@ -1,0 +1,5 @@
+<h1>This is the users#index page!</h1>
+
+<% if !current_user %>
+	Log in with Facebook!  <%= link_to "Facebook", "/auth/facebook/" %>
+<% end %>
