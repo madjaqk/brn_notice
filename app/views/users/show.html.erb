@@ -63,3 +63,9 @@
 		<% end %>
 	</table>
 <% end %>
+
+<h1>Comments!</h1>
+
+<table>
+<%= render partial: "comments/comment", collection: Comment.where(recipient: @user) %>
+</table>

@@ -1,0 +1,6 @@
+<tr>
+	<td><% if comment.commenter.profile_picture %><img src="<%= comment.commenter.profile_picture %>"><% end %></td>
+	<td><h4><a href="users/#{comment.commenter.id}"><%= comment.commenter.first_name %></a> said...</h4>
+		<%= comment.comment %>
+	</td>
+</tr>
