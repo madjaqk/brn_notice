@@ -10,26 +10,6 @@
 <img src="<%= @user.profile_picture %>"><h1><u><%= @user.first_name %> <%= @user.last_name %>'s Page</u></h1>
 
 <% if current_user == @user %>
-	<div class="showform">
-		<h3>Edit your info:</h3>
-		<%= simple_form_for @user, :url => "/users/#{@user.id}", :method => "patch" do |f| %>
-			<%= f.input :first_name %>
-			<%= f.input :last_name %>
-			<%= f.input :email, input_html: { value: @email_for_form } %>
-			<%= f.input :zip_code %>
-			<%= f.input :about %>
-			<%= f.button :submit %>
-		<% end %>
-	</div>
-	<div class="form">
-		<h3>Share a picture!</h3>
-		<form action="/picture" method="post">
-			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-			<p>Picture URL: <input type="url" name="picture_url"></p>
-			<input type="submit" value="Submit">
-		</form>
-	</div>
-
 	<% if @on_diet %>
 		<div class="showform">
 			<h3>Update:</h3>
@@ -39,21 +19,10 @@
 				<input type="submit" value="update">
 			</form>
 		</div>
-	<% else %>
-		<div class="sform">
-			<h3>Start your diet!</h3>
-			<form action="/start_diet/" method="post">
-				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-				<p>Start weight: <input type="number" name="start_weight"></p>
-				<p>Goal weight: <input type="number" name="goal_weight"></p>
-				<p>End date: <input type="date" name="end_date" value="<%= @default_end_date %>"></p>
-				<input type="submit" value="Start">
-			</form>
-		</div>
 	<% end %>
-<% else %>
-	<% if @user.about %><b>About me</b>: <%= @user.about %><% end %>
 <% end %>
+
+<% if @user.about %><b>About me</b>: <%= @user.about %><% end %>
 
 <% if @pictures.length > 0 %>
 	<h1>Pictures!</h1>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   get '/users/:id' => 'users#show'
+  get 'users/:id/edit' => 'users#edit'
   get '/login' => 'users#new'
   post '/users/create' => 'users#create'
   post '/sessions/create' => 'sessions#create'
