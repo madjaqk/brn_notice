@@ -30,6 +30,8 @@ class UsersController < ApplicationController
 			end
 		end
 
+		@comment = Comment.new
+
 		render "show"
 	end
 

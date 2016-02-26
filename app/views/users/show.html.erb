@@ -50,7 +50,7 @@
 	<% if @user.about %><b>About me</b>: <%= @user.about %><% end %>
 <% end %>
 
-<% if @progress_chart_data.length > 0 %>
+<% if @progress_chart_data %>
 	<%= area_chart [{name: "", data: @progress_chart_data}, {name: "Goal weight", data: @goal_weight_data}], min: @user.goal_weight - 10, stacked: false, library: {legend: 'none'} %>
 	<table>
 		<tr><th>Date</th>
@@ -66,6 +66,13 @@
 
 <h1>Comments!</h1>
 
+<% if current_user %>
+	<%= simple_form_for @comment, :url => "/comments" do |f| %>
+		<%= f.hidden_field :recipient, value: @user.id %>
+		<%= f.input :comment %>
+		<%= f.button :submit, "Leave comment" %>
+	<% end %>
+<% end %>
 <table>
 <%= render partial: "comments/comment", collection: Comment.where(recipient: @user) %>
 </table>
