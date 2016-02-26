@@ -6,11 +6,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		if current_user == @user 
-			@email_for_form = @user.email if !@user.email.include? "@fakefakefake.fake"
-			@default_end_date = (Time.new+60*60*24*90).strftime("%Y-%m-%d") # Default is 90 days from now
-		end
-
+		
 		begin
 			if @user.end_date > Time.new
 				@on_diet = true
@@ -37,6 +33,26 @@ class UsersController < ApplicationController
 		render "show"
 	end
 
+	def edit
+		@user = User.find(params[:id])
+		if current_user != @user
+			redirect_to "/users/#{params[:id]}"
+		else
+			@email_for_form = @user.email if !@user.email.include? "@fakefakefake.fake"
+			@default_end_date = (Time.new+60*60*24*90).strftime("%Y-%m-%d") # Default is 90 days from now	
+
+			begin
+				if @user.end_date > Time.new
+					@on_diet = true
+				else
+					@on_diet = false
+				end
+			rescue
+				@on_diet = false
+			end
+		end
+	end
+
 	def new
 		@new_user = User.new
 		render "new"
@@ -47,7 +63,7 @@ class UsersController < ApplicationController
 		if @user.is_a?(User)
 			session[:user_id] = @user.id
 			flash[:success] = "Account created"
-			redirect_to "/users/#{@user.id}"
+			redirect_to "/users/#{@user.id}/edit"
 		else
 			flash[:error] = @user
 			redirect_to "/login"
