@@ -12,6 +12,8 @@
 		<p>Hello, <a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a>!</p>
 		<p><img src="<%= current_user.profile_picture %>"></p>
 		<p><%= link_to "Log out", logout_path, method: :delete %></p>
+	<% else %>
+		<a href="/login">Log in or create an account</a>
 	<% end %>
 
 	<hr>

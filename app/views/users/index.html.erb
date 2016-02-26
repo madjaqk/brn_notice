@@ -1,5 +1,10 @@
 <h1>This is the users#index page!</h1>
 
-<% if !current_user %>
-	<a href="/login">Log in or create an account</a>
+<table>
+<% @users.each do |user| %>
+	<tr><td><img src="<%= user.profile_picture %>"></td>
+		<td><a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></td>
+		<td><%= user.about %></td>
+	</tr>
 <% end %>
+</table>
