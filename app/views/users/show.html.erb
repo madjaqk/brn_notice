@@ -1,20 +1,16 @@
-<style type="text/css">
-	div.form{
-		width: 400px;
-		border: 5px solid black;
-		padding: 25px;
-		margin-bottom: 25px;
-	}
-
-	h3{
-		margin: 0px;
-	}
-</style>
-
-<img src="<%= @user.profile_picture %>"><h1><u><%= @user.first_name %> <%= @user.last_name %></u></h1>
+<div id="subpageHeader">
+	<div id="box9">
+		<%= image_tag("logo1.gif")%> <span id="text9">BRN</span><span id="text10">Notice</span>
+	</div>
+</div>
+<div id="box2">
+	<span id="button"><%= link_to "Logout", logout_path, method: :delete %></span>
+</div>
+<div id="showpageBody">
+<img src="<%= @user.profile_picture %>"><h1><u><%= @user.first_name %> <%= @user.last_name %>'s Page</u></h1>
 
 <% if current_user == @user %>
-	<div class="form">
+	<div class="showform">
 		<h3>Edit your info:</h3>
 		<%= simple_form_for @user, :url => "/users/#{@user.id}", :method => "patch" do |f| %>
 			<%= f.input :first_name %>
@@ -26,7 +22,7 @@
 		<% end %>
 	</div>
 	<% if @on_diet %>
-		<div class="form">
+		<div class="showform">
 			<h3>Update:</h3>
 			<form action="/update" method="post">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -35,7 +31,7 @@
 			</form>
 		</div>
 	<% else %>
-		<div class="form">
+		<div class="sform">
 			<h3>Start your diet!</h3>
 			<form action="/start_diet/" method="post">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -76,3 +72,4 @@
 <table>
 <%= render partial: "comments/comment", collection: Comment.where(recipient: @user) %>
 </table>
+</div>

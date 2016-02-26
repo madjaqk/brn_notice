@@ -1,0 +1,441 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#flashbox {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	font: white;
+}
+
+#img-container {
+    max-width: 100%;
+    max-height: 65%;
+}
+
+#img1, #img2, #img3, #img4 {
+	width: 100%;
+	height: 65%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#img1 {
+	background-image: url('jog1.jpg');
+}
+
+#img2 {
+	background-image: url('bike1.jpg');
+}
+
+#img3 {
+	background-image: url('yoga1.jpg');
+}
+
+#img4 {
+	background-image: url('mountain.jpg');
+}
+
+#header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+	color: white;
+}
+
+#box {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+}
+
+#box img {
+	width: 28px;
+	height: 28px;
+}
+
+#box img, #text, #text2 {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#text {
+	font-weight: bold;
+}
+
+#text, #text2 {
+	font-size: 30px;
+}
+
+#text2 {
+	color: #008CBA;
+}
+
+#box2 {
+	height: 70px;
+	width: 20em;
+	float: right;
+	margin-right: 15px;
+}
+
+#box2 img, #box2 table {
+	margin: 0px 5px;
+}
+
+#box2 table, #box2 a {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#button {
+	background-color: #00AAB0;
+	padding: 5px 10px;
+	height: 40px;
+	display: inline-block;
+	margin: 0px 3px;
+}
+
+#button:hover {
+	background-color: white;
+	color: #008CBA;
+}
+
+#box2 a {
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+}
+
+#box2 a:hover {
+	color: #008CBA;
+}
+
+#midbox {
+	height: 65%;
+	width: 75%;
+	text-align: center;
+	margin: 0px auto;
+}
+
+#midbox p:nth-child(1) {
+	font-size: 50px;
+	color: white;
+	border: 15px solid white;
+	padding: 2% 1%;
+	margin: 80px 0px 10px 0px;
+}
+
+#midbox p:nth-child(2) {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#header2 {
+	width: 100%;
+	height: 22%;
+	background-color: #d9d9d9;
+	border-top: 5px solid #008CBA;
+	text-align: center;
+	position: absolute;
+	top: 65%;
+	padding: 0px;
+}
+
+#header2 h2 {
+	font-size: 2em;
+	font-weight: bold;
+	letter-spacing: .5em;
+	opacity: .9;
+	color: #008CBA;
+	margin: 7px 0px;
+}
+
+#microbox {
+	width: 15%;
+	color: #222;
+	opacity: .65;
+	font-weight: bold;
+	text-align: center;
+	margin: 1.5% 2%;
+	display: inline-block;
+	vertical-align: top;
+	transition: all .3s ease-in-out;
+}
+
+#microbox:hover {
+	transform: scale(1.1);
+}
+
+#microbox:nth-child(3), #microbox:nth-child(5) {
+	opacity: .4;
+}
+
+#microbox:nth-child(6) {
+	color: #008CBA;
+	opacity: 1;
+}
+
+#microbox .glyphicon {
+	font-size: 2em;
+}
+
+#body {
+	background-color: white;
+	width: 100%;
+	position: absolute;
+	top: 87%;
+}
+
+#joinbox {
+	width: 100%;
+	text-align: center;
+}
+
+#joinbox h3 {
+	letter-spacing: -2px;
+	color: #222;
+	opacity: .65;
+	font-size: 2em;
+}
+
+#joinbox button {
+	padding: .6em 2em;
+	background-color: #00AAB0;
+	color: white;
+	font-size: 2em;
+	border-radius: 5px;
+	letter-spacing: .1em;
+	margin: 1% 0% 2.5% 0%; 
+}
+
+#joinbox button:hover {
+	background-color: white;
+	color: #00AAB0;
+}
+
+#joinbox a {
+	text-decoration: none;
+}
+
+#innerbody {
+	width: 100%;
+	border-top: 5px solid #008CBA;
+}
+
+#body1, #body2 {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#body1 {
+	width: 49%;
+	padding: 3%;
+	color: #222;
+	opacity: .65;
+}
+
+#body1 p:nth-child(1) {
+	font-size: 2em;
+}
+
+#body1 .glyphicon, #bodyheadline {
+	font-size: 1.25em;
+	margin: 8% 0% 2% 0%;
+	font-weight: bold;
+	opacity: .65;
+}
+
+#body1 .glyphicon {
+	color: #008CBA;
+	opacity: 1;
+}
+
+
+#body2 {
+	max-width: 50%;
+	max-height: 45%;
+	padding-left: 2%;
+}
+
+#group {
+	width: 30em;
+	height: 35em;
+	background-image: url('group-pic.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0px auto;
+}
+
+#lastbody {
+	text-align: center;
+	margin: 0px auto;
+	width: 70%;
+}
+
+#lastbody p:before {
+  content: "\201C"; /*Unicode for Left Double Quote*/
+
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+#lastbody p {
+  position: relative;
+  padding: 1em 3em;
+  margin: 1em 0 3em;
+  color: white;
+  font-size: 1.5em;
+  background-color: #008CBA;
+  border-radius: 10px;
+}
+
+
+
+#lastbody p:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -15px;
+  left: 70%;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #008CBA transparent;
+}
+
+
+
+#orange {
+	color: orange;
+}
+
+#name {
+	font-weight: bold;
+	color: orange;
+}
+
+#bendiv {
+	max-width: 100%;
+	max-height: 50%;
+}
+
+#ben {
+	width: 45em;
+	height: 30em;
+	background-image: url('ben.jpg');
+	background-repeat: no-repeat;
+	margin: 0px auto;
+
+}
+
+#bigspace, #subpageHeader {
+	height: 10%;
+	background-color: #222;
+	opacity: .8;
+	color: white;
+}
+
+#bigspace {
+	border-top: 5px solid #008CBA;
+}
+
+#box9 {
+	margin: 1% 5%;
+}
+
+#box9 img {
+	width: 28px;
+	height: 28px;
+}
+
+#box9 img, #text9, #text10 {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#text9 {
+	font-weight: bold;
+}
+
+#text9, #text10 {
+	font-size: 30px;
+}
+
+#text10 {
+	color: #008CBA;
+}
+
+/*=========Login Styles==========*/
+
+#subpageHeader {
+	border-bottom: 5px solid #008CBA;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -1;
+}
+
+.formMain {
+	position: absolute;
+	top: 15%;
+	width: 100%;
+}
+
+.form{
+	width: 45%;
+	border: 5px solid #008CBA;
+	padding: 25px;
+	font: 1em;
+	font-weight: bold;
+	color: #222;
+	opacity: .8;
+	line-height: 2em;
+	border-radius: 10px;
+	margin: 5px auto;
+}
+
+h3{
+	margin: 5px 10px;
+}
+
+#last {
+	width: 100%;
+	text-align: center;
+}
+
+#last p {
+	font-size: 1.5em;
+}
+
+/*===========Show Page / Dashboard==========*/
+#showpageBody {
+	position: absolute;
+	top: 10%;
+}
+
+
+
+
+
+
+
+
+
+

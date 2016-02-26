@@ -1,0 +1,106 @@
+
+
+#body2 {
+	width: 40%;
+	height: 50%;
+	background-image: url('group-pic.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 3% 0%;
+}
+
+#lastbody {
+	text-align: center;
+	margin: 0px auto;
+	width: 70%;
+}
+
+blockquote {
+  position: relative;
+  padding: 2.5em;
+  margin: 1em 0 3em;
+  color: white;
+  font-size: 1.5em;
+  background-color: #008CBA;
+  border-radius: 10px;
+  background: linear-gradient(top, #f9d835, #f3961c);
+}
+
+blockquote:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -15px;
+  left: 70%;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #008CBA transparent;
+}
+
+blockquote p:before {
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 5em;
+  font-weight: bold;
+  color: orange;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+#orange {
+	color: orange;
+}
+
+#name {
+	font-weight: bold;
+	color: orange;
+}
+
+#ben {
+	width: 1000px;
+	height: 600px;
+	background-image: url('ben.jpg');
+	background-repeat: no-repeat;
+
+}
+
+#bigspace {
+	height: 10%;
+	width: 100%;
+	background-color: #222;
+	opacity: .8;
+	color: white;
+	border-top: 5px solid #008CBA;
+}
+
+#box9 {
+	margin: 1% 5%;
+}
+
+#box9 img {
+	width: 28px;
+	height: 28px;
+}
+
+#box9 img, #text9, #text10 {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#text9 {
+	font-weight: bold;
+}
+
+#text9, #text10 {
+	font-size: 30px;
+}
+
+#text10 {
+	color: #008CBA;
+}

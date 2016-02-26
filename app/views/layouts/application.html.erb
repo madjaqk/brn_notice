@@ -6,24 +6,30 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "fitness.css" %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script language="JavaScript" type="text/javascript">
+	$(function() {
+		function rotate() {
+			$('#img-container div').last().fadeOut(1000, function() {
+				$(this).insertBefore($('#img-container div').first()).show();
+			});
+		}
+
+		setInterval(function() {
+			rotate();
+		}, 10000);
+	});
+  </script>
 </head>
 <body>
-	<% if current_user %>
-		<p>Hello, <a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a>!</p>
-		<p><img src="<%= current_user.profile_picture %>"></p>
-		<p><%= link_to "Log out", logout_path, method: :delete %></p>
-	<% else %>
-		<a href="/login">Log in or create an account</a>
-	<% end %>
-
-	<hr>
-
-	<% flash.each do |key, value| %>
-		<%= value %>
-	<% end %>
-
-
+	<div id="main">
+		<div id="flashbox">
+			<% flash.each do |key, value| %>
+				<%= value %>
+			<% end %>
+		</div>
 	<%= yield %>
-
+	</div> <!-- main container -->
 </body>
 </html>
