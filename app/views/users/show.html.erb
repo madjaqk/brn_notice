@@ -21,6 +21,15 @@
 			<%= f.button :submit %>
 		<% end %>
 	</div>
+	<div class="form">
+		<h3>Share a picture!</h3>
+		<form action="/picture" method="post">
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<p>Picture URL: <input type="url" name="picture_url"></p>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+
 	<% if @on_diet %>
 		<div class="showform">
 			<h3>Update:</h3>
@@ -46,7 +55,15 @@
 	<% if @user.about %><b>About me</b>: <%= @user.about %><% end %>
 <% end %>
 
+<% if @pictures.length > 0 %>
+	<h1>Pictures!</h1>
+	<% @pictures.each do |picture| %>
+		<img src="<%= picture.picture %>">
+	<% end %>
+<% end %>
+
 <% if @progress_chart_data %>
+	<h1>Progress!</h1>
 	<%= area_chart [{name: "", data: @progress_chart_data}, {name: "Goal weight", data: @goal_weight_data}], min: @user.goal_weight - 10, stacked: false, library: {legend: 'none'} %>
 	<table>
 		<tr><th>Date</th>

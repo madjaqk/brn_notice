@@ -32,6 +32,7 @@ class UsersController < ApplicationController
 		end
 
 		@comment = Comment.new
+		@pictures = Picture.where(user: current_user).order(:created_at)
 
 		render "show"
 	end

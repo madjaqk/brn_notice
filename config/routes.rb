@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/start_diet' => 'users#start_diet'
   post '/update' => 'updates#create'
   post '/comments' => 'comments#create'
+  post '/picture' => 'pictures#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
